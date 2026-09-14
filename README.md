@@ -1,11 +1,64 @@
-<div align="center">
+# تك بلاس - الموقع الرسمي
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+مشروع موقع شركة تك بلاس للأنظمة المحاسبية مبني باستخدام Next.js (App Router)، React، Tailwind CSS و TypeScript.
 
-  <h1>Built with AI Studio</h2>
+## التثبيت
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+تأكد من تثبيت Node.js، ثم قم بتشغيل الأمر التالي لتثبيت الحزم:
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+\`\`\`bash
+npm install
+\`\`\`
 
-</div>
+## التشغيل في بيئة التطوير
+
+لتشغيل خادم التطوير:
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+بعد ذلك، افتح الرابط:
+[http://localhost:3000/ar](http://localhost:3000/ar)
+
+## البناء للإنتاج (Production Build)
+
+لإنشاء نسخة جاهزة للإنتاج:
+
+\`\`\`bash
+npm run build
+\`\`\`
+
+ثم لتشغيل الخادم:
+
+\`\`\`bash
+npm run start
+\`\`\`
+
+## تخصيص البيانات
+
+جميع البيانات الثابتة الخاصة بالشركة (اسم الدومين، رقم الهاتف، روابط التواصل، الشعار) تم تجميعها في ملف إعدادات واحد لتسهيل التعديل المستقبلي:
+
+**مسار الملف:**
+\`config/site.ts\`
+
+قم بفتح هذا الملف وتغيير ما يلزم (مثل رابط الدومين `url` أو رقم الهاتف `phone`).
+
+## إضافة المقالات
+
+لإضافة مقالات جديدة للمدونة:
+1. قم بفتح الملف: `app/ar/blog/page.tsx` وأضف بيانات المقال الجديد في مصفوفة `articles`.
+2. قم بفتح الملف: `app/ar/blog/[slug]/page.tsx` وأضف محتوى المقال في الكائن `articlesContent` باستخدام نفس الـ `slug` الذي أضفته في الخطوة السابقة.
+
+## إضافة الصور
+
+يجب وضع جميع الصور في مجلد `public/images/`.
+مثال: إذا أضفت صورة `hero-dashboard.png`، يمكنك استدعاؤها في الكود كالتالي:
+\`/images/hero-dashboard.png\`
+
+## النشر على Vercel
+
+هذا المشروع متوافق 100% مع منصة Vercel.
+1. قم برفع المشروع إلى GitHub.
+2. ادخل إلى Vercel واربط حسابك مع المستودع.
+3. اضغط على Deploy وسيقوم Vercel ببناء المشروع ونشره تلقائياً بدون الحاجة لإعدادات إضافية.
